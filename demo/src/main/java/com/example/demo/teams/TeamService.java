@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class TeamService {
 
+
     private final TeamRepository teamRepository;
 
     @Autowired
@@ -17,7 +18,6 @@ public class TeamService {
         this.teamRepository = teamRepository;
     }
 
-    public List<Team> getTeams(){
-        return teamRepository.findAll();
+    public List<Team> getTeams(){ return teamRepository.findAll();
     }
 }
