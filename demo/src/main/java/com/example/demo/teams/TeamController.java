@@ -1,14 +1,13 @@
 package com.example.demo.teams;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/v1/team")
+@CrossOrigin("*")
 public class TeamController {
 
     private final TeamService teamService;
@@ -23,6 +22,12 @@ public class TeamController {
         return teamService.getTeams();
 
     }
+    @PostMapping
+    public void registerNewTeam(@RequestBody Team team){
+        teamService.addNewTeam(team);
+    }
+
+
 
 
 }

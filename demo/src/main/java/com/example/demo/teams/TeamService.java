@@ -20,4 +20,9 @@ public class TeamService {
 
     public List<Team> getTeams(){ return teamRepository.findAll();
     }
+
+
+    public void addNewTeam(Team team) {
+        System.out.println(team);
+    }
 }
